@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Ario.CMS.Data.Models.Page>
+
+<section class="last-news-section border-radius margin-top-60">
+    <header><i class="fa fa-newspaper-o fa-2x"></i>  <h3>آخرین آخبار ارسالی</h3> </header>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>
+                <img class="border-radius" src="/PageImages/@item.ImageName">
+                <h2> <a href=""> @item.PageTitle </a></h2>
+                <p>
+                    @Html.Raw(item.PageText)
+                </p>
+                <span class="date-publish"><i class="fa fa-calendar"></i> انتشار : @item.CreateDate.ToShamsi()</span>
+                <a href="" class="more-link"><i class="fa fa-ellipsis-h fa-2x"></i></a>
+            </li>
+        }
+    </ul>
+</section>

@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Ario.CMS.Data.Models.PageComment>
+
+<section class="category-section border-radius">
+    <header><i class="fa fa-commenting-o fa-2x"></i> <h3> اخرین نظرات </h3></header>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li><span> @item.Name  گفته : </span>
+                <br />
+                <p>@item.CommentText</p>
+                <br />
+                <span> مربوط به :</span><a href=""> @item.PageTitle </a>
+                </li>
+        }
+    </ul>
+</section>

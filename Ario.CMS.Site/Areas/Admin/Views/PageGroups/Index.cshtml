@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Ario.CMS.Data.Models.PageGroups>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a href="/admin/PageGroups/Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GroupTitle)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GroupTitle)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.GroupID" class="btn btn-primary">
+                        <div class="fa fa-pencil"></div>
+                    </a> |
+                    <a asp-action="Details" asp-route-id="@item.GroupID" class="btn btn-primary">
+                        <div class="fa fa-info"></div>
+                    </a> |
+                    <a asp-action="Delete" asp-route-id="@item.GroupID" class="btn btn-primary">
+                        <div class="fa fa-trash"></div>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

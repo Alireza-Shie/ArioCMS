@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Ario.CMS.Data.Models.Page>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PageTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShortDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Visit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShowInSlider)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreateDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src="/PageImages/@item.ImageName" style="max-width: 140px"/>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PageTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShortDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Visit)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShowInSlider)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreateDate)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.PageID" class="btn btn-primary">
+                        <div class="fa fa-pencil"></div>
+                    </a> |
+                    <a asp-action="Details" asp-route-id="@item.PageID" class="btn btn-primary">
+                        <div class="fa fa-info"></div>
+                    </a> |
+                    <a asp-action="Delete" asp-route-id="@item.PageID" class="btn btn-primary">
+                        <div class="fa fa-trash"></div>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
