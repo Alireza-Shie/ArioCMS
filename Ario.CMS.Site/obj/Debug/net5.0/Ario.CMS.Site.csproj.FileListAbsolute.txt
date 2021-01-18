@@ -205,3 +205,4 @@ E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Ra
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\Components\CategoryMenu\Default.cshtml.g.cs
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\Components\LatestComment\Default.cshtml.g.cs
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\Components\LatestPage\Default.cshtml.g.cs
+E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\News\Archive.cshtml.g.cs

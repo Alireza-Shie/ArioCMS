@@ -67,14 +67,10 @@
             <span><i class="fa fa-th-list"></i></span>
             <ul>
                 <li><a href="/"> صفحه اصلی </a></li>
-                @if (User.IsInRole("Admin"))
-                {
-                    <li><a href="/Admin/PageGroups/Index"> مدیریت گروه ها </a></li>
-                    <li><a href="/Admin/Pages/Index"> مدیرت خبر ها </a></li>
-                    <li><a asp-action="Index" asp-controller="ManageUser"> مدیریت کاربران </a></li>
-                    <li><a asp-action="Index" asp-controller="ManageRole"> مدیریت نقش ها </a></li>
-                }
-
+                <li>
+                    <span>گروه های خبری</span>
+                    @await Component.InvokeAsync("CategoryMenu")
+                </li>
                 @if (!signInManager.IsSignedIn(User))
                 {
                     <li><a asp-action="Login" asp-controller="Account"> ورود به سایت </a></li>
@@ -82,12 +78,16 @@
                 }
                 else
                 {
+                    <li><a href="/">سلام  @User.Identity.Name</a></li>
                     <li><a asp-action="LogOff" asp-controller="Account">خروج</a></li>
                 }
-                <li>
-                    <span>گروه های خبری</span>
-                    @await Component.InvokeAsync("CategoryMenu")
-                </li>
+                @if (User.IsInRole("Admin"))
+                {
+                    <li><a href="/Admin/PageGroups/Index"> مدیریت گروه ها </a></li>
+                    <li><a href="/Admin/Pages/Index"> مدیرت خبر ها </a></li>
+                    <li><a asp-action="Index" asp-controller="ManageUser"> مدیریت کاربران </a></li>
+                    <li><a asp-action="Index" asp-controller="ManageRole"> مدیریت نقش ها </a></li>
+                }
             </ul>
         </div>
     </nav>
