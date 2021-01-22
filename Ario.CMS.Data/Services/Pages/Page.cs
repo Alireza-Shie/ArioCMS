@@ -47,6 +47,16 @@ namespace Ario.CMS.Data.Services.Pages
             return db.Pages.Where(p => p.GroupID == id);
         }
 
+        public IEnumerable<Models.Page> GetPageByBeforeWeek(int take = 11)
+        {
+            return db.Pages.OrderBy(p => p.CreateDate).Take(take);
+        }
+
+        public IEnumerable<Models.Page> GetLeastVisitedNews(int take = 5)
+        {
+            return db.Pages.OrderBy(p => p.Visit).Take(take);
+        }
+
         public Models.Page GetPageByID(int id)
         {
             return db.Pages.Find(id);

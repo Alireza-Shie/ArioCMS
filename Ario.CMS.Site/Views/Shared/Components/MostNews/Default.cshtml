@@ -1,16 +1,28 @@
 ﻿@model IEnumerable<Ario.CMS.Data.Models.Page>
 
-<section class="last-news-side border-radius">
-    <header><i class="fa fa-star fa-2x"></i> <h3> پربازدیدترین اخبار </h3></header>
-    <ul>
+<aside class="mt-3">
+    <h1 class="aside-title">
+        محبوب ترین اخبار <a href="#" class="all">
+            مشاهده همه <i class="ion-ios-arrow-left"></i>
+        </a>
+    </h1>
+    <div class="aside-body">
         @foreach (var item in Model)
         {
-            <li>
-                <img class="border-radius" src="~/PageImages/@item.ImageName">
-
-                <h2><a href="">@item.PageTitle</a></h2>
-                <span>انتشار : @item.CreateDate.ToShamsi()</span>
-            </li>
+            <article class="article-mini">
+                <div class="inner">
+                    <figure>
+                        <a href="single-post.html">
+                            <img src="/PageImages/@item.ImageName" alt="@item.PageTitle">
+                        </a>
+                    </figure>
+                    <div class="padding">
+                        <h1>
+                            <a href="single-post.html">@item.PageTitle</a>
+                        </h1>
+                    </div>
+                </div>
+            </article>
         }
-    </ul>
-</section>
+    </div>
+</aside>

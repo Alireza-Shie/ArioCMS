@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Ario.CMS.Data.Models.Page>
+
+<div class="col-md-6 col-sm-6">
+    <h1 class="title-col">
+        اخبار داغ
+        <div class="carousel-nav" id="hot-news-nav">
+            <div class="prev">
+                <i class="ion-ios-arrow-left"></i>
+            </div>
+            <div class="next">
+                <i class="ion-ios-arrow-right"></i>
+            </div>
+        </div>
+    </h1>
+    <div class="body-col vertical-slider" data-max="4" data-nav="#hot-news-nav"
+         data-item="article">
+        @foreach (var item in Model)
+        {
+            <article class="article-mini">
+                <div class="inner">
+                    <figure>
+                        <a href="single-post.html">
+                            <img src="/PageImages/@item.ImageName" alt="@item.PageTitle">
+                        </a>
+                    </figure>
+                    <div class="padding">
+                        <h1>
+                            <a href="single-post.html">
+                                @item.PageTitle
+                            </a>
+                        </h1>
+                        <div class="detail">
+                            <div class="category"><a href="category.html">@item.Visit بازدید</a></div>
+                            <div class="time">12 اردیبهشت ۱۳۹۹</div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        }
+    </div>
+</div>

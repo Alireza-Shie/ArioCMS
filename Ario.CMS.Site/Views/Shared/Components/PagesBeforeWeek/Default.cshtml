@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Ario.CMS.Data.Models.Page>
+
+<section class="best-of-the-week">
+    <div class="container">
+        <h1>
+            <div class="text">برترین اخبار هفته گذشته</div>
+            <div class="carousel-nav" id="best-of-the-week-nav">
+                <div class="prev">
+                    <i class="ion-ios-arrow-left"></i>
+                </div>
+                <div class="next">
+                    <i class="ion-ios-arrow-right"></i>
+                </div>
+            </div>
+        </h1>
+        <div class="owl-carousel owl-theme carousel-1">
+            @foreach (var item in Model)
+            {
+                <article class="article">
+                    <div class="inner">
+                        <figure>
+                            <a href="single-post.html">
+                                <img src="/PageImages/@item.ImageName" alt="Sample Article">
+                            </a>
+                        </figure>
+                        <div class="padding">
+                            <div class="detail">
+                                <div class="time">@item.CreateDate.ToShamsi()</div>
+                                <div class="category"><a href="category.html">@item.Visit بازدید</a></div>
+                            </div>
+                            <h2><a href="single-post.html">@item.PageTitle</a></h2>
+                            <p>@item.ShortDescription</p>
+                        </div>
+                    </div>
+                </article>
+            }
+        </div>
+    </div>
+</section>

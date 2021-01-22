@@ -1,19 +1,45 @@
 ﻿@model IEnumerable<Ario.CMS.Data.Models.Page>
 
-<section class="last-news-section border-radius margin-top-60">
-    <header><i class="fa fa-newspaper-o fa-2x"></i>  <h3>آخرین آخبار ارسالی</h3> </header>
-    <ul>
-        @foreach (var item in Model)
-        {
-            <li>
-                <img class="border-radius" src="/PageImages/@item.ImageName">
-                <h2> <a href=""> @item.PageTitle </a></h2>
-                <p>
-                    @Html.Raw(item.PageText)
-                </p>
-                <span class="date-publish"><i class="fa fa-calendar"></i> انتشار : @item.CreateDate.ToShamsi()</span>
-                <a href="" class="more-link"><i class="fa fa-ellipsis-h fa-2x"></i></a>
-            </li>
-        }
-    </ul>
-</section>
+<div class="row">
+
+    @foreach (var item in Model)
+    {
+<div class="col-md-6 col-sm-6 col-xs-12">
+    <div class="row">
+        <article class="article col-md-12">
+            <div class="inner my-1">
+                <figure>
+                    <a href="single-post.html">
+                        <img src="/PageImages/@item.ImageName" alt="Sample Article">
+                    </a>
+                </figure>
+                <div class="padding pt-3">
+                    <div class="detail text-right">
+                        <div class="time">
+                            @item.CreateDate.ToShamsi() <i class="fa fa-clock float-right ml-2 mt-0-5"></i>
+                        </div>
+                    </div>
+                    <h2>
+                        <a href="single-post.html">
+                            @item.PageTitle
+                        </a>
+                    </h2>
+                    <p>
+                        @item.ShortDescription
+                    </p>
+                    <footer>
+                        <a class="love" href="#">
+                            <i class="">بازدید</i>
+                            <div>@item.Visit</div>
+                        </a>
+                        <a class="btn btn-primary more" href="single-post.html">
+                            <div>بیشتر</div>
+                            <div><i class="ion-ios-arrow-thin-left"></i></div>
+                        </a>
+                    </footer>
+                </div>
+            </div>
+        </article>
+    </div>
+</div>}
+</div>

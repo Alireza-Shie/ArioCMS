@@ -14,6 +14,8 @@ namespace Ario.CMS.Data.Interfaces.Pages
         IEnumerable<Models.Page> GetPageBySlider(int take = 4);
         IEnumerable<Models.Page> GetPageByCerateDate(int take = 4);
         IEnumerable<Models.Page> GetPageByGroupId(int id);
+        IEnumerable<Models.Page> GetPageByBeforeWeek(int take = 11);
+        IEnumerable<Models.Page> GetLeastVisitedNews(int take = 5);
         Models.Page GetPageByID(int id);
         bool InsertPage(Models.Page page);
         bool UpdatePage(Models.Page page);
