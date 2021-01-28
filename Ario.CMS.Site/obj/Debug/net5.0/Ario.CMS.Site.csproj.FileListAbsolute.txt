@@ -210,3 +210,9 @@ E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Ra
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\Components\MostNewsForContent\Default.cshtml.g.cs
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\Components\PagesBeforeWeek\Default.cshtml.g.cs
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\Components\LeastVisitedNews\Default.cshtml.g.cs
+E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\News\ShowPage.cshtml.g.cs
+E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\News\ShowGroup.cshtml.g.cs
+E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\Components\AdminCard\Default.cshtml.g.cs
+E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\Components\TopTags\Default.cshtml.g.cs
+E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\Components\LatestPagesFooter\Default.cshtml.g.cs
+E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\Components\TopTagsFooter\Default.cshtml.g.cs

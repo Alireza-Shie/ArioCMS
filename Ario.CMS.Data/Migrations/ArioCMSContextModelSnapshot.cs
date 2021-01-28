@@ -40,8 +40,7 @@ namespace Ario.CMS.Data.Migrations
 
                     b.Property<string>("PageText")
                         .IsRequired()
-                        .HasMaxLength(800)
-                        .HasColumnType("nvarchar(800)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PageTitle")
                         .IsRequired()
@@ -50,8 +49,7 @@ namespace Ario.CMS.Data.Migrations
 
                     b.Property<string>("ShortDescription")
                         .IsRequired()
-                        .HasMaxLength(300)
-                        .HasColumnType("nvarchar(300)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("ShowInSlider")
                         .HasColumnType("bit");

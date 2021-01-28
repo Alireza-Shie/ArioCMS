@@ -43,18 +43,7 @@
                     <div class="col-md-6 col-sm-6 trending-tags">
                         <h1 class="title-col">برچسب های برتر</h1>
                         <div class="body-col">
-                            <ol class="tags-list">
-                                <li><a href="#">کرونا</a></li>
-                                <li><a href="#">قیمت ارز</a></li>
-                                <li><a href="#">دربی پایتخت</a></li>
-                                <li><a href="#">واژگونی اتوبوس</a></li>
-                                <li><a href="#">سامسونگ</a></li>
-                                <li><a href="#">بازی جدید</a></li>
-                                <li><a href="#">جشنواره فجر</a></li>
-                                <li><a href="#">قیمت سکه</a></li>
-                                <li><a href="#">برجام</a></li>
-                                <li><a href="#">جام جهانی 2022</a></li>
-                            </ol>
+                            @await Component.InvokeAsync("TopTags")
                         </div>
                     </div>
                     @await Component.InvokeAsync("MostNewsForContent")
@@ -66,6 +55,10 @@
             </div>
             <div class="col-xs-6 col-md-4 sidebar" id="sidebar">
                 <div class="sidebar-title for-tablet">سایدبار</div>
+                @if (User.IsInRole("Admin"))
+                {
+                    @await Component.InvokeAsync("AdminCard")
+                }
                 @await Component.InvokeAsync("MostNews")
                 <aside>
                     <div class="aside-body">

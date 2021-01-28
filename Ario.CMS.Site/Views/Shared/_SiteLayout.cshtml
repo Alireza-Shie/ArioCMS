@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@inject SignInManager<IdentityUser> signInManager
+
+<!DOCTYPE html>
 <html dir="rtl">
 
 <head>
@@ -72,18 +74,30 @@
                     </div>
                     <div class="col-lg-3 col-md-12 col-sm-12 text-right">
                         <ul class="nav-icons">
-                            <li>
-                                <a href="register.html">
-                                    <i class="ion-person-add"></i>
-                                    <div>ثبت نام</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="login.html">
-                                    <i class="ion-person"></i>
-                                    <div>ورود</div>
-                                </a>
-                            </li>
+                            @if (!signInManager.IsSignedIn(User))
+                            {
+                                <li>
+                                    <a asp-controller="Account" asp-action="Register">
+                                        <i class="ion-person-add"></i>
+                                        <div>ثبت نام</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a asp-controller="Account" asp-action="Login">
+                                        <i class="ion-person"></i>
+                                        <div>ورود</div>
+                                    </a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <a asp-controller="Account" asp-action="LogOff">
+                                        <i class="ion-log-out"></i>
+                                        <div>خروج</div>
+                                    </a>
+                                </li>
+                            }
                         </ul>
                     </div>
                 </div>
@@ -140,56 +154,9 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="dropdown magz-dropdown">
-                            <a href="category.html">دسته بندی ها <i class="ion-ios-arrow-left"></i></a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown magz-dropdown">
-                                    <a href="#">ورزشی <i class="fa fa-angle-left"></i></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="category.html">والیبال</a></li>
-                                        <li class="dropdown magz-dropdown">
-                                            <a href="#">فوتبال <i class="fa fa-angle-left"></i></a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="category.html">لیگ برتر</a></li>
-                                                <li><a href="category.html">لیگ جزیره</a></li>
-                                                <li><a href="category.html">لالیگا</a></li>
-                                                <li><a href="category.html">جام جهانی</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="category.html">بسکتبال</a></li>
-                                        <li><a href="category.html">اتومبیل رانی</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="category.html">سیاست</a></li>
-                                <li><a href="category.html">فرهنگ و هنر</a></li>
-                                <li><a href="category.html">سلامت</a></li>
-                                <li class="dropdown magz-dropdown">
-                                    <a href="#">اقتصاد <i class="fa fa-angle-left"></i></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="category.html">بورس</a></li>
-                                        <li class="dropdown magz-dropdown">
-                                            <a href="#">قیمت سکه و ارز <i class="fa fa-angle-left"></i></a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="category.html">قیمت سکه</a></li>
-                                                <li class="dropdown magz-dropdown">
-                                                    <a href="#">قیمت ارز <i class="fa fa-angle-left"></i></a>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a href="category.html">دلار</a></li>
-                                                        <li><a href="category.html">یورو</a></li>
-                                                        <li><a href="category.html">یوهان</a></li>
-                                                        <li><a href="category.html">درهم</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="category.html">قیمت نفت</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="category.html">حوادث</a></li>
-                            </ul>
-                        </li>
+                    @await Component.InvokeAsync("CategoryMenu")
 
-                        <li class="dropdown magz-dropdown magz-dropdown-megamenu">
+                    <li class="dropdown magz-dropdown magz-dropdown-megamenu">
                             <a href="#">
                                 مگامنو <i class="ion-ios-arrow-left"></i>
                                 <div class="badge">ویژه</div>
@@ -371,20 +338,21 @@
                             </div>
                         </li>
 
-                        <li class="dropdown magz-dropdown">
-                            <a href="#">
-                                منوی کاربری <i class="ion-ios-arrow-left"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#"><i class="icon fa fa-user"></i> پنل کاربری</a></li>
-                                <li><a href="#"><i class="icon fa fa-heart"></i> علاقه مندی ها</a></li>
-                                <li><a href="#"><i class="icon fa fa-comment"></i> نظرات</a></li>
-                                <li><a href="#"><i class="icon fa fa-key"></i> تغییر رمز عبور</a></li>
-                                <li><a href="#"><i class="icon fa fa-gears"></i> تنظیمات</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#"><i class="icon ion-log-out mt-0"></i> خروج از حساب کاربری</a></li>
-                            </ul>
-                        </li>
+                        @if (User.IsInRole("Admin"))
+                        {
+            <li class="dropdown magz-dropdown">
+                <a href="#">
+                    مدیریت سایت <i class="ion-ios-arrow-left"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="/Admin/Pages/Index"><i class="icon fa fa-newspaper-o"></i>مدیریت خبرها</a></li>
+                    <li><a href="/Admin/PageGroups/Index"><i class="icon fa fa-archive"></i>مدیریت گروه ها</a></li>
+                    <li><a asp-controller="ManageUser" asp-action="Index"><i class="icon fa fa-users"></i>مدیریت کاربران</a></li>
+                    <li><a asp-controller="ManageRole" asp-action="Index"><i class="icon fa fa-universal-access"></i> مدیریت نقش ها</a></li>
+                    <li><a href="#"><i class="icon fa fa-comments"></i>نظرات</a></li>
+                    <li class="divider"></li>
+                </ul>
+            </li>}
                     </ul>
                 </div>
             </div>
@@ -419,22 +387,10 @@
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                     <div class="block">
                         <h1 class="block-title">
-                            برترین برچسب ها <div class="left">
-                                <a href="#">
-                                    مشاهده همه <i class="ion-ios-arrow-thin-left"></i>
-                                </a>
-                            </div>
+                            برترین برچسب ها <div class="left"></div>
                         </h1>
                         <div class="block-body">
-                            <ul class="tags">
-                                <li><a href="#">کرونا</a></li>
-                                <li><a href="#">قیمت ارز</a></li>
-                                <li><a href="#">دربی پایتخت</a></li>
-                                <li><a href="#">واژگونی اتوبوس</a></li>
-                                <li><a href="#">برجام</a></li>
-                                <li><a href="#">قیمت سکه</a></li>
-                                <li><a href="#">گوشی سامسونگ</a></li>
-                            </ul>
+                            @await Component.InvokeAsync("TopTagsFooter")
                         </div>
                     </div>
                     <div class="line"></div>
@@ -455,74 +411,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                    <div class="block">
-                        <h1 class="block-title">آخرین خبر ها</h1>
-                        <div class="block-body">
-                            <article class="article-mini">
-                                <div class="inner">
-                                    <figure>
-                                        <a href="single-post.html">
-                                            <img src="/WebSiteTemplate/images/news/img12.jpg" alt="Sample Article">
-                                        </a>
-                                    </figure>
-                                    <div class="padding">
-                                        <h1>
-                                            <a href="single-post.html">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</a>
-                                        </h1>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="article-mini">
-                                <div class="inner">
-                                    <figure>
-                                        <a href="single-post.html">
-                                            <img src="/WebSiteTemplate/images/news/img14.jpg" alt="Sample Article">
-                                        </a>
-                                    </figure>
-                                    <div class="padding">
-                                        <h1>
-                                            <a href="single-post.html">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</a>
-                                        </h1>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="article-mini">
-                                <div class="inner">
-                                    <figure>
-                                        <a href="single-post.html">
-                                            <img src="/WebSiteTemplate/images/news/img15.jpg" alt="Sample Article">
-                                        </a>
-                                    </figure>
-                                    <div class="padding">
-                                        <h1>
-                                            <a href="single-post.html">
-                                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                                            </a>
-                                        </h1>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="article-mini">
-                                <div class="inner">
-                                    <figure>
-                                        <a href="single-post.html">
-                                            <img src="/WebSiteTemplate/images/news/img16.jpg" alt="Sample Article">
-                                        </a>
-                                    </figure>
-                                    <div class="padding">
-                                        <h1>
-                                            <a href="single-post.html">
-                                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                                            </a>
-                                        </h1>
-                                    </div>
-                                </div>
-                            </article>
-                            <a href="#" class="btn btn-magz white btn-block text-center">
-                                مشاهده همه <i class="ion-ios-arrow-thin-left"></i>
-                            </a>
-                        </div>
-                    </div>
+                    @await Component.InvokeAsync("LatestPagesFooter")
                 </div>
                 <div class="col-lg-3 col-md-6 col-xs-12 col-sm-6">
                     <div class="block">

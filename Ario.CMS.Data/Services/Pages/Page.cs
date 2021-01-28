@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Ario.CMS.Data.Context;
 using Ario.CMS.Data.Interfaces.Pages;
+using Ario.CMS.ViewModel.Page;
 using Microsoft.EntityFrameworkCore;
 
 namespace Ario.CMS.Data.Services.Pages
@@ -60,6 +61,16 @@ namespace Ario.CMS.Data.Services.Pages
         public Models.Page GetPageByID(int id)
         {
             return db.Pages.Find(id);
+        }
+
+        public string TopTags()
+        {
+            return db.Pages.OrderByDescending(p => p.Visit).FirstOrDefault().Tags.ToString();
+        }
+
+        public int GetGroupIdByPageId(int pageId)
+        {
+            return db.Pages.Find(pageId).GroupID;
         }
 
         public bool InsertPage(Models.Page page)

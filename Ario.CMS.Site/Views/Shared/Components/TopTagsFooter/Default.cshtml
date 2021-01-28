@@ -1,0 +1,8 @@
+﻿@model string
+
+<ul class="tags">
+    @foreach (var item in Model.Split(','))
+    {
+        <li><a href="#">@item</a></li>
+    }
+</ul>

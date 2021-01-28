@@ -17,6 +17,8 @@ namespace Ario.CMS.Data.Interfaces.Pages
         IEnumerable<Models.Page> GetPageByBeforeWeek(int take = 11);
         IEnumerable<Models.Page> GetLeastVisitedNews(int take = 5);
         Models.Page GetPageByID(int id);
+        string TopTags();
+        int GetGroupIdByPageId(int pageId);
         bool InsertPage(Models.Page page);
         bool UpdatePage(Models.Page page);
         bool DeletePage(Models.Page page);

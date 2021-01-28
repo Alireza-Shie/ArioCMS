@@ -19,13 +19,11 @@ namespace Ario.CMS.Data.Models
 
         [Display(Name = "توضیح کوتاه")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        [MaxLength(300)]
         [DataType(DataType.MultilineText)]
         public string ShortDescription { get; set; }
 
         [Display(Name = "متن صفحه")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        [MaxLength(800)]
         [DataType(DataType.MultilineText)]
         public string PageText { get; set; }
 

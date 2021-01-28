@@ -1,8 +1,11 @@
 ﻿@model IEnumerable<Ario.CMS.Data.Models.PageGroups>
 
-<ul>
-    @foreach (var item in Model)
-    {
-        <li><a href="">اخبار @item.GroupTitle</a></li>
-    }
-</ul>
+<li class="dropdown magz-dropdown">
+    <a href="category.html">دسته بندی ها <i class="ion-ios-arrow-left"></i></a>
+    <ul class="dropdown-menu">
+        @foreach (var item in Model)
+        {
+            <li><a href="category.html">@item.GroupTitle</a></li>
+        }
+    </ul>
+</li>

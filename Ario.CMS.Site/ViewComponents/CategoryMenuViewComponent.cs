@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Ario.CMS.Site.ViewComponents
 {
-    public class CategoryMenuViewComponent:ViewComponent
+    public class CategoryMenuViewComponent : ViewComponent
     {
         private readonly Context db = new Context();
 

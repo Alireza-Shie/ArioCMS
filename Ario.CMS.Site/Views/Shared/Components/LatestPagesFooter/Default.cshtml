@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Ario.CMS.Data.Models.Page>
+
+<div class="block">
+    <h1 class="block-title">آخرین خبر ها</h1>
+    <div class="block-body">
+        @foreach (var item in Model)
+        {
+            <article class="article-mini">
+                <div class="inner">
+                    <figure>
+                        <a href="single-post.html">
+                            <img src="/PageImages/@item.ImageName" alt="Sample Article">
+                        </a>
+                    </figure>
+                    <div class="padding">
+                        <h1>
+                            <a href="single-post.html">@item.PageTitle</a>
+                        </h1>
+                    </div>
+                </div>
+            </article>
+        }
+        <a href="/Archive" class="btn btn-magz white btn-block text-center">
+            مشاهده همه <i class="ion-ios-arrow-thin-left"></i>
+        </a>
+    </div>
+</div>

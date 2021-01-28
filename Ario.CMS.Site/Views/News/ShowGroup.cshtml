@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Ario.CMS.Data.Models.Page>
+
+@{
+    ViewData["Title"] = ViewBag.GroupTitle;
+}
+
+<section class="category">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-8 text-left">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ol class="breadcrumb">
+                            <li><a href="#">خانه</a></li>
+                            <li><a href="#">دسته بندی</a></li>
+                            <li class="active">@ViewBag.GroupTitle</li>
+                        </ol>
+                        <h1 class="page-title mt-3">دسته بندی : @ViewBag.GroupTitle</h1>
+                        <p class="page-subtitle text-large mb-4">نمایش پست ها با دسته بندی <i>@ViewBag.GroupTitle</i></p>
+                    </div>
+                </div>
+                <div class="line mt-1"></div>
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <article class="col-md-12 article-list">
+                            <div class="inner">
+                                <figure>
+                                    <a href="single-post.html">
+                                        <img src="/PageImages/@item.ImageName">
+                                    </a>
+                                </figure>
+                                <div class="details">
+                                    <div class="detail text-right d-flex">
+                                        <div class="time"><i class="fa fa-clock"></i>@item.CreateDate.ToShamsi()</div>
+                                    </div>
+                                    <h1 class="pt-0">
+                                        <a href="single-post.html">
+                                            @item.PageTitle
+                                        </a>
+                                    </h1>
+                                    <p>
+                                        @item.ShortDescription
+                                    </p>
+                                    <footer class="mt-2">
+                                        <a class="btn btn-primary more" href="single-post.html">
+                                            <div>بیشتر</div>
+                                            <div><i class="ion-ios-arrow-thin-left"></i></div>
+                                        </a>
+                                    </footer>
+                                </div>
+                            </div>
+                        </article>
+                    }
+                    <div class="col-md-12 text-center d-flex justify-content-center">
+                        <ul class="pagination">
+                            <li class="prev"><a href="#"><i class="ion-ios-arrow-right"></i></a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">...</a></li>
+                            <li><a href="#">97</a></li>
+                            <li class="next"><a href="#"><i class="ion-ios-arrow-left"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-4 sidebar">
+                <aside>
+                    <div class="aside-body">
+                        <figure class="ads">
+                            <a href="single-post.html">
+                                <img src="/WebSiteTemplate/images/ad.png">
+                            </a>
+                            <figcaption class="text-center">تبلغات</figcaption>
+                        </figure>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</section>

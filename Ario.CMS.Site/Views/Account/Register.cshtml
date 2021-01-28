@@ -2,35 +2,37 @@
     ViewData["Title"] = "Register";
 }
 
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Register" method="post">
-            <div class="alert alert-danger" asp-validation-summary="ModelOnly">
-            </div>
-            <div class="form-group">
-                <label class="control-label">نام نمایشی</label>
-                <input class="form-control" name="UserName" />
-                <span class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label class="control-label">ایمیل</label>
-                <input class="form-control" type="email" name="Email" />
-                <span class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label class="control-label">رمز عبور</label>
-                <input class="form-control" type="password" name="Password" />
-                <span class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label class="control-label">تکرار رمز عبور</label>
-                <input class="form-control" type="password" name="ConfirmPassword" />
-                <span class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Submit" class="btn btn-primary" />
-            </div>
-        </form>
+<div style="margin: 212px 50px">
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Register" method="post">
+                <div class="alert alert-danger" asp-validation-summary="ModelOnly">
+                </div>
+                <div class="form-group">
+                    <label class="control-label">نام نمایشی</label>
+                    <input class="form-control" name="UserName" />
+                    <span class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">ایمیل</label>
+                    <input class="form-control" type="email" name="Email" />
+                    <span class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">رمز عبور</label>
+                    <input class="form-control" type="password" name="Password" />
+                    <span class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">تکرار رمز عبور</label>
+                    <input class="form-control" type="password" name="ConfirmPassword" />
+                    <span class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Submit" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
