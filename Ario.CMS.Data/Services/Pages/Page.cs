@@ -38,7 +38,7 @@ namespace Ario.CMS.Data.Services.Pages
             return db.Pages.Where(p => p.ShowInSlider == true);
         }
 
-        public IEnumerable<Models.Page> GetPageByCerateDate(int take = 4)
+        public IEnumerable<Models.Page> GetPageByCreateDate(int take = 4)
         {
             return db.Pages.OrderByDescending(p => p.CreateDate).Take(take);
         }
@@ -56,6 +56,11 @@ namespace Ario.CMS.Data.Services.Pages
         public IEnumerable<Models.Page> GetLeastVisitedNews(int take = 5)
         {
             return db.Pages.OrderBy(p => p.Visit).Take(take);
+        }
+
+        public IEnumerable<Models.Page> SearchPage(string parameter)
+        {
+            return db.Pages.Where(p => p.PageTitle.Contains(parameter) || p.ShortDescription.Contains(parameter) || p.Tags.Contains(parameter) || p.PageText.Contains(parameter)).Distinct().ToList();
         }
 
         public Models.Page GetPageByID(int id)

@@ -1,0 +1,11 @@
+﻿@model string
+
+
+@foreach (var item in Model.Split(','))
+{
+    <div class="item">
+        <a href="/search/search?q=@item">
+            @item
+        </a>
+    </div>
+}

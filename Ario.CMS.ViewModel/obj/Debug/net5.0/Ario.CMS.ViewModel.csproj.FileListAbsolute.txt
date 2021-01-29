@@ -9,4 +9,3 @@ E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.ViewModel\obj\Debug\net5
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.ViewModel\obj\Debug\net5.0\Ario.CMS.ViewModel.dll
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.ViewModel\obj\Debug\net5.0\ref\Ario.CMS.ViewModel.dll
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.ViewModel\obj\Debug\net5.0\Ario.CMS.ViewModel.pdb
-E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.ViewModel\obj\Debug\net5.0\Ario.CMS.ViewModel.csprojAssemblyReference.cache

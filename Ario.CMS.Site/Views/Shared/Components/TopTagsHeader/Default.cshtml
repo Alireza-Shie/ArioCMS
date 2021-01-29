@@ -1,8 +1,8 @@
 ﻿@model string
 
-<ol class="tags-list">
+<ul>
     @foreach (var item in Model.Split(','))
     {
         <li><a href="/search/search?q=@item">@item</a></li>
     }
-</ol>
+</ul>

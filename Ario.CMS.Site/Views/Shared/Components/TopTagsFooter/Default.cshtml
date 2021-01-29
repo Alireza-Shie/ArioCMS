@@ -3,6 +3,6 @@
 <ul class="tags">
     @foreach (var item in Model.Split(','))
     {
-        <li><a href="#">@item</a></li>
+        <li><a href="/search/search?q=@item">@item</a></li>
     }
 </ul>

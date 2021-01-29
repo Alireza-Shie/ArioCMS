@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Ario.CMS.Data.Models.Page>
+@{
+    ViewData["Title"] = "جستوجو" + ViewBag.Query;
+}
+
+<section class="search first" style="padding-top: 220px;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <!-- Sidebar Widget -->
+            <div class="col-12 col-sm-9 col-md-12 col-lg-3 mb-5">
+                <aside>
+                    <h2 class="aside-title text-dark text-large">جستجو</h2>
+                    <div class="aside-body">
+                        <p class="text-dark text-right">جستجو بر اساس خبرها</p>
+                        <form>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="text" name="q" class="form-control text-right" placeholder="جستجو ..." value="@ViewBag.Query">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-primary">
+                                            <i class="ion-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </aside>
+            </div>
+
+
+            <!-- Intro News Tabs Area -->
+            <div class="col-12 col-lg-9">
+
+                <div class="search-result text-right text-dark text-large mb-4">
+                    نتایج جستجو برای کلید واژه "@ViewBag.Query" در بین @Model.Count() خبر
+                </div>
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <article class="col-md-12 article-list">
+                            <div class="inner">
+                                <figure>
+                                    <a href="single-post.html">
+                                        <img src="/PageImages/@item.ImageName">
+                                    </a>
+                                </figure>
+                                <div class="details">
+                                    <div class="detail text-right d-flex">
+                                        <div class="time"><i class="fa fa-clock"></i> @item.CreateDate.ToShamsi()</div>
+                                    </div>
+                                    <h1 class="pt-0">
+                                        <a href="single-post.html">
+                                            @item.PageTitle
+                                        </a>
+                                    </h1>
+                                    <p>
+                                        @item.ShortDescription ...
+                                    </p>
+                                    <footer class="mt-2">
+                                        <a class="btn btn-primary more" href="single-post.html">
+                                            <div>بیشتر</div>
+                                            <div><i class="ion-ios-arrow-thin-left"></i></div>
+                                        </a>
+                                    </footer>
+                                </div>
+                            </div>
+                        </article>
+                    }
+                    <div class="col-md-12 text-center d-flex justify-content-center">
+                        <ul class="pagination">
+                            <li class="prev"><a href="#"><i class="ion-ios-arrow-right"></i></a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">...</a></li>
+                            <li><a href="#">97</a></li>
+                            <li class="next"><a href="#"><i class="ion-ios-arrow-left"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>

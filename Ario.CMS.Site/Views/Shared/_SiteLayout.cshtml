@@ -13,7 +13,7 @@
     <!-- Shareable -->
     <meta property="og:title" content="قالب خبری Magz" />
     <meta property="og:type" content="article" />
-    <title>قالب خبری Magz</title>
+    <title>@ViewData["Title"] - سایت خبری ArioCMS</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="/WebSiteTemplate/scripts/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="/WebSiteTemplate/css/bootstrap-rtl.min.css">
@@ -42,33 +42,27 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-12 col-sm-12">
                         <div class="brand">
-                            <a href="index.html">
+                            <a href="/">
                                 <img src="/WebSiteTemplate/images/logo.png" alt="Magz Logo">
                             </a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-12">
-                        <form class="search" autocomplete="off">
+                        <form class="search" autocomplete="off" action="/search/search">
                             <div class="form-group">
                                 <div class="input-group">
                                     <input type="text" name="q" class="form-control"
                                            placeholder="جستجوی عبارت مورد نظر ...">
                                     <div class="input-group-btn">
                                         <button class="btn btn-primary">
-                                            <a class="ion-search text-white" href="search.html"></a>
+                                            <a class="ion-search text-white"></a>
                                         </button>
                                     </div>
                                 </div>
                             </div>
                             <div class="help-block mt-2">
                                 <div>محبوب ترین ها : </div>
-                                <ul>
-                                    <li><a href="#">کرونا</a></li>
-                                    <li><a href="#">قیمت ارز</a></li>
-                                    <li><a href="#">فوتبال</a></li>
-                                    <li><a href="#">آلودگی هوا</a></li>
-                                    <li><a href="#">برجام</a></li>
-                                </ul>
+                                @await Component.InvokeAsync("TopTagsHeader")
                             </div>
                         </form>
                     </div>
@@ -97,6 +91,12 @@
                                         <div>خروج</div>
                                     </a>
                                 </li>
+                                <li>
+                                    <a href="/">
+                                        <i class="ion-at"></i>
+                                        <div>سلام @User.Identity.Name</div>
+                                    </a>
+                                </li>
                             }
                         </ul>
                     </div>
@@ -123,11 +123,11 @@
                         <li class="for-tablet nav-title"><a>فهرست</a></li>
                         <li class="for-tablet"><a href="login.html">ورود</a></li>
                         <li class="for-tablet"><a href="register.html">ثبت نام</a></li>
-                        <li><a href="index.html">خانه</a></li>
+                        <li><a href="/">خانه</a></li>
                         <li class="dropdown magz-dropdown">
                             <a href="#">صفحات <i class="ion-ios-arrow-left"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="index.html">خانه</a></li>
+                                <li><a href="/">خانه</a></li>
                                 <li><a href="element.html">عناصر طراحی</a></li>
                                 <li class="dropdown magz-dropdown">
                                     <a href="#">صفحات دسترسی کاربر <i class="fa fa-angle-left"></i></a>
@@ -373,12 +373,12 @@
                         <h1 class="block-title">درباره ما</h1>
                         <div class="block-body">
                             <figure class="foot-logo">
-                                <img src="/WebSiteTemplate/images/logo-light.png" class="img-responsive" alt="Logo">
+                                <img src="/WebSiteTemplate/images/logo.png" class="img-responsive" alt="Logo">
                             </figure>
                             <p class="brand-description">
                                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم ...
                             </p>
-                            <a href="about.html" class="btn btn-magz white">
+                            <a href="/home/aboutus" class="btn btn-magz white">
                                 صفحه درباره ما <i class="ion-ios-arrow-thin-left"></i>
                             </a>
                         </div>
@@ -506,9 +506,9 @@
                     <div class="block">
                         <div class="block-body no-margin">
                             <ul class="footer-nav-horizontal">
-                                <li><a href="index.html">خانه</a></li>
+                                <li><a href="/">خانه</a></li>
                                 <li><a href="contact.html">تماس با ما</a></li>
-                                <li><a href="about.html">در باره ما</a></li>
+                                <li><a href="/home/aboutus">در باره ما</a></li>
                             </ul>
                         </div>
                     </div>

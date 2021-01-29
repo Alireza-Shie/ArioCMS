@@ -17,16 +17,11 @@
                             <span class="sr-only">قبلی</span>
                         </a>
                     </div>
+                    <!--TopTags For Slider-->
                     <div class="owl-carousel owl-theme" id="headline">
-                        <div class="item">
-                            <a href="#">
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم <div class="badge">داغ !</div>
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a href="#">لورم ایپسوم متن ساختگی با تولید سادگی </a>
-                        </div>
+                        @await Component.InvokeAsync("TopTagsSlider")
                     </div>
+                    <!--End TopTags-->
                 </div>
                 @await Component.InvokeAsync("Slider")
                 <div class="line">

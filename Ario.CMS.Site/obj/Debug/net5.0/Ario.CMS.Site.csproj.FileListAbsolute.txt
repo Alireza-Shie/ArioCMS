@@ -48,7 +48,6 @@ E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Ar
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Ario.CMS.Site.TagHelpers.output.cache
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Ario.CMS.Site.RazorCoreGenerate.cache
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
-E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -216,3 +215,7 @@ E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Ra
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\Components\TopTags\Default.cshtml.g.cs
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\Components\LatestPagesFooter\Default.cshtml.g.cs
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\Components\TopTagsFooter\Default.cshtml.g.cs
+E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Search\Search.cshtml.g.cs
+E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\Components\TopTagsHeader\Default.cshtml.g.cs
+E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\Components\TopTagsSlider\Default.cshtml.g.cs
+E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Home\AboutUS.cshtml.g.cs

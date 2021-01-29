@@ -4,35 +4,71 @@
     ViewData["Title"] = "Login";
 }
 
-<div style="margin: 212px 50px">
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Login" asp-route-returnUrl="@ViewData["returnUrl"]" method="post">
-            <div class="alert alert-danger" asp-validation-summary="ModelOnly"></div>
-            <div class="form-group">
-                <label class="control-label">نام نمایشی</label>
-                <input class="form-control" name="UserName" />
-                <span class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label class="control-label">رمز عبور</label>
-                <input class="form-control" type="password" name="Password" />
-                <span class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <div class="checkbox">
-                        <label asp-for="RememberMe">
-                            <input asp-for="RememberMe" />
-                            <label>مرا به خاطر بسپار</label>
-                        </label>
-                    </div>
+<section class="login first grey" style="padding-top: 220px;">
+    <div class="container">
+        <div class="box-wrapper">
+            <div class="box box-border">
+                <div class="box-body">
+                    <h4 class="text-dark text-center text-xlarge mb-5">صفحه ورود</h4>
+                    <form asp-action="Login" method="post">
+                        <div class="alert alert-danger" asp-validation-summary="ModelOnly"></div>
+                        <div class="form-group">
+                            <label>نام کاربری</label>
+                            <input type="text" name="UserName" class="form-control text-left">
+                        </div>
+                        <div class="form-group">
+                            <label class="fw">
+                                رمز عبور
+                            </label>
+                            <div style="position: relative; display: flex; width: 100%;">
+                                <div style="position: relative; width: 100%">
+                                    <div style="position: relative">
+                                        <input type="password" name="Password" class="form-control text-left" style="padding-left: 60px;"><input type="hidden" id="passeye-0">
+                                        <div class="btn btn-primary btn-sm" id="passeye-toggle-0" style="position: absolute; left: 10px; top: 50%; transform: translate(0, -50%); -webkit-transform: translate(0, -50%); -o-transform: translate(0, -50%); padding: 2px 7px; font-size: 12px; cursor: pointer;">مشاهده</div>
+                                    </div><input type="hidden" id="passeye-0" value="">
+                                    <div class="btn btn-primary btn-sm d-none" id="passeye-toggle-0" style="position: absolute; left: 10px; top: 50%; transform: translate(0, -50%); -webkit-transform: translate(0, -50%); -o-transform: translate(0, -50%); padding: 2px 7px; font-size: 12px; cursor: pointer;">
+                                        مشاهده
+                                    </div>
+                                </div>
+                                <input type="hidden" id="passeye-0">
+                                <div class="btn btn-magz btn-sm" id="passeye-toggle-0" style="position: absolute; left: 10px; top: 50%; transform: translate(0, -50%); -webkit-transform: translate(0, -50%); -o-transform: translate(0, -50%); padding: 2px 7px; font-size: 12px; cursor: pointer; z-index: -1;">
+                                    مشاهده
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <div class="checkbox">
+                                    <label asp-for="RememberMe">
+                                        <input asp-for="RememberMe" />
+                                        <label>مرا به خاطر بسپار</label>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group text-right">
+                            <button class="btn btn-primary btn-block text-center">ورود</button>
+                        </div>
+                        <div class="form-group text-center font-16">
+                            <span class="text-muted">قبلا ثبت نام نکرده اید؟</span>
+                            <a asp-controller="Account" asp-action="Register">
+                                ایجاد
+                                حساب کاربری
+                            </a>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Submit" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
-</div>
-</div>
+</section>
+
+@section Scripts
+{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

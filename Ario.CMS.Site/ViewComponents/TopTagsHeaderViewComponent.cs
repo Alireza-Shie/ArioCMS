@@ -7,13 +7,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Ario.CMS.Site.ViewComponents
 {
-    public class LatestPagesFooterViewComponent : ViewComponent
+    public class TopTagsHeaderViewComponent : ViewComponent
     {
         private readonly Context db = new Context();
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            return View("Default", db.Page.GetPageByCreateDate(take: 4));
+            return View("Default", db.Page.TopTags());
         }
     }
 }
