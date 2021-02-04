@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Ario.CMS.Data.Models.Page>
+
+<li class="dropdown magz-dropdown magz-dropdown-megamenu">
+    <a href="#">
+        مگامنو <i class="ion-ios-arrow-left"></i>
+        <div class="badge">ویژه</div>
+    </a>
+    <div class="dropdown-menu megamenu">
+        <div class="megamenu-inner">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h2 class="megamenu-title">ویژه</h2>
+                        </div>
+                    </div>
+                    <ul class="vertical-menu">
+                        @foreach (var item in Model)
+                        {
+                            <li>
+                                <a href="/News/@item.PageID/@item.PageTitle">
+                                    <i class="ion-ios-circle-outline"></i>@item.PageTitle
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <div class="col-lg-9">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h2 class="megamenu-title">پست های جدید</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        @foreach (var item in Model)
+                        {
+                            <article class="article col-lg-4 mini">
+                                <div class="inner">
+                                    <figure>
+                                        <a href="/News/@item.PageID/@item.PageTitle">
+                                            <img src="/PageImages/@item.ImageName" alt="Sample Article">
+                                        </a>
+                                    </figure>
+                                    <div class="padding">
+                                        <div class="detail">
+                                            <div class="time">@item.CreateDate.ToShamsi()</div>
+                                        </div>
+                                        <h2>
+                                            <a href="/News/@item.PageID/@item.PageTitle">
+                                                @item.ShortDescription.Trim().Replace("،", " ").Substring(0, 35) ...
+                                            </a>
+                                        </h2>
+                                    </div>
+                                </div>
+                            </article>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</li>

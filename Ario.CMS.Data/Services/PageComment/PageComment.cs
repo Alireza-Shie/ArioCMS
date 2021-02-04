@@ -21,6 +21,11 @@ namespace Ario.CMS.Data.Services.PageComment
             return _context.PageComments.OrderByDescending(o => o.DateTime).Take(take).ToList();
         }
 
+        public IEnumerable<Models.PageComment> GetAllCommentsByPageId(int pageId)
+        {
+            return _context.PageComments.OrderByDescending(p=>p.DateTime).Where(c => c.PageID == pageId).ToList();
+        }
+
         public bool InsertComment(Models.PageComment comment)
         {
             try

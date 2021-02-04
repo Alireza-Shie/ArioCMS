@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Ario.CMS.Data.Models.PageComment>
+
+@if (!Model.Any())
+{
+    <div class="comments my-5" id="Comments">
+        <h2 class="title">نظرات <a href="#AddComment">یک دیدگاه جدید ارسال کنید.</a></h2>
+        <div class="comment-list">
+            <div class="item">
+                <div class="user">
+                    <div class="details">
+                        <div class="description">
+                            نظری وجود ندارد :(
+                        </div>
+                        <footer>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="comments my-5" id="Comments">
+        <h2 class="title">نظرات <a href="#AddComment">یک دیدگاه جدید ارسال کنید.</a></h2>
+        <div class="comment-list">
+            @foreach (var item in Model)
+            {
+                <div class="item">
+                    <div class="user">
+                        <figure>
+                            <img src="/WebSiteTemplate/images/0c3b3adb1a7530892e55ef36d3be6cb8.png">
+                        </figure>
+                        <div class="details">
+                            <h5 class="name">@item.Name</h5>
+                            <div class="time">@item.DateTime.ToShamsi()</div>
+                            <div class="description">
+                                @item.CommentText
+                            </div>
+                            <footer>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}

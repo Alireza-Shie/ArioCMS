@@ -19,19 +19,19 @@
             <article class="article-mini">
                 <div class="inner">
                     <figure>
-                        <a href="single-post.html">
+                        <a href="/News/@item.PageID/@item.PageTitle">
                             <img src="/PageImages/@item.ImageName" alt="@item.PageTitle">
                         </a>
                     </figure>
                     <div class="padding">
                         <h1>
-                            <a href="single-post.html">
-                                @item.PageTitle
+                            <a href="/News/@item.PageID/@item.PageTitle">
+                                @item.PageTitle (ArioCMS)
                             </a>
                         </h1>
                         <div class="detail">
                             <div class="category"><a href="category.html">@item.Visit بازدید</a></div>
-                            <div class="time">12 اردیبهشت ۱۳۹۹</div>
+                            <div class="time">@item.CreateDate.ToShamsi()</div>
                         </div>
                     </div>
                 </div>

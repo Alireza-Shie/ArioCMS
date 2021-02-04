@@ -1,45 +1,46 @@
 ﻿@model IEnumerable<Ario.CMS.Data.Models.Page>
 
 <div class="row">
-
     @foreach (var item in Model)
     {
-<div class="col-md-6 col-sm-6 col-xs-12">
-    <div class="row">
-        <article class="article col-md-12">
-            <div class="inner my-1">
-                <figure>
-                    <a href="single-post.html">
-                        <img src="/PageImages/@item.ImageName" alt="Sample Article">
-                    </a>
-                </figure>
-                <div class="padding pt-3">
-                    <div class="detail text-right">
-                        <div class="time">
-                            @item.CreateDate.ToShamsi() <i class="fa fa-clock float-right ml-2 mt-0-5"></i>
-                        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="row">
+                <article class="article col-md-12">
+                    <div class="inner my-1">
+                        <figure>
+                            <a href="/news/@item.PageID/@item.PageTitle">
+                                <img src="/PageImages/@item.ImageName" alt="Sample Article">
+                            </a>
+                        </figure>
+                        <div class="padding pt-3">
+                            <div class="detail text-right">
+                                <div class="time">
+                                    @item.CreateDate.ToShamsi() <i class="fa fa-clock float-right ml-2 mt-0-5"></i>
+                                </div>
+                            </div>
+                            <h2>
+                                <a href="/news/@item.PageID/@item.PageTitle">
+                                    @item.PageTitle
+                                </a>
+                            </h2>
+                            <p id="description">
+                                @item.ShortDescription.ToString().Trim().Substring(0,55) ...
+                            </p>
+                            <footer>
+                                    <a class="love" href="#">
+                                        <i class="">بازدید</i>
+                                        <div>@item.Visit</div>
+                                    </a>
+                                    <a class="btn btn-primary more" href="/news/@item.PageID/@item.PageTitle">
+                                        <div>بیشتر</div>
+                                        <div><i class="ion-ios-arrow-thin-left"></i></div>
+                                    </a>
+                                </footer>
+                          </div>
                     </div>
-                    <h2>
-                        <a href="single-post.html">
-                            @item.PageTitle
-                        </a>
-                    </h2>
-                    <p>
-                        @item.ShortDescription
-                    </p>
-                    <footer>
-                        <a class="love" href="#">
-                            <i class="">بازدید</i>
-                            <div>@item.Visit</div>
-                        </a>
-                        <a class="btn btn-primary more" href="single-post.html">
-                            <div>بیشتر</div>
-                            <div><i class="ion-ios-arrow-thin-left"></i></div>
-                        </a>
-                    </footer>
-                </div>
+                </article>
             </div>
-        </article>
-    </div>
-</div>}
+        </div>
+    }
 </div>
+

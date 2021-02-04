@@ -7,11 +7,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="قالب خبری Magz">
+    <meta name="description" content="Ario CMS">
     <meta name="author" content="Kodinger">
-    <meta name="keyword" content="قالب خبری، قالب اچ تی ام ال، قالب خبری مگز">
+    <meta name="keyword" content="CMS">
     <!-- Shareable -->
-    <meta property="og:title" content="قالب خبری Magz" />
+    <meta property="og:title" content="ArioCMS" />
     <meta property="og:type" content="article" />
     <title>@ViewData["Title"] - سایت خبری ArioCMS</title>
     <!-- Bootstrap -->
@@ -43,7 +43,7 @@
                     <div class="col-lg-3 col-md-12 col-sm-12">
                         <div class="brand">
                             <a href="/">
-                                <img src="/WebSiteTemplate/images/logo.png" alt="Magz Logo">
+                                <img src="/WebSiteTemplate/images/ArioCMSLogo.jpg" alt="ArioCMS Logo">
                             </a>
                         </div>
                     </div>
@@ -70,34 +70,32 @@
                         <ul class="nav-icons">
                             @if (!signInManager.IsSignedIn(User))
                             {
-                                <li>
-                                    <a asp-controller="Account" asp-action="Register">
-                                        <i class="ion-person-add"></i>
-                                        <div>ثبت نام</div>
-                                    </a>
-                                </li>
+                 <li>
+                    <a asp-controller="Account" asp-action="Register">
+                        <i class="ion-person-add"></i>
+                        <div>ثبت نام</div>
+                    </a>
+                </li>
                                 <li>
                                     <a asp-controller="Account" asp-action="Login">
                                         <i class="ion-person"></i>
                                         <div>ورود</div>
                                     </a>
-                                </li>
-                            }
-                            else
-                            {
+                                </li> }
+                                            else
+                                            {
                                 <li>
                                     <a asp-controller="Account" asp-action="LogOff">
                                         <i class="ion-log-out"></i>
                                         <div>خروج</div>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="/">
-                                        <i class="ion-at"></i>
-                                        <div>سلام @User.Identity.Name</div>
-                                    </a>
-                                </li>
-                            }
+                                                <li>
+                                                    <a href="/">
+                                                        <i class="ion-at"></i>
+                                                        <div>سلام @User.Identity.Name</div>
+                                                    </a>
+                                                </li>}
                         </ul>
                     </div>
                 </div>
@@ -109,7 +107,7 @@
             <div class="container">
                 <div class="brand">
                     <a href="#">
-                        <img src="/WebSiteTemplate/images/logo.png" alt="Magz Logo">
+                        <img src="/WebSiteTemplate/images/ArioCMSLogo.jpg" alt="Magz Logo">
                     </a>
                 </div>
                 <div class="mobile-toggle">
@@ -121,238 +119,28 @@
                 <div id="menu-list">
                     <ul class="nav-list">
                         <li class="for-tablet nav-title"><a>فهرست</a></li>
-                        <li class="for-tablet"><a href="login.html">ورود</a></li>
-                        <li class="for-tablet"><a href="register.html">ثبت نام</a></li>
+                        <li class="for-tablet"><a asp-controller="Account" asp-action="Login">ورود</a></li>
+                        <li class="for-tablet"><a asp-controller="Account" asp-action="Register">ثبت نام</a></li>
                         <li><a href="/">خانه</a></li>
-                        <li class="dropdown magz-dropdown">
-                            <a href="#">صفحات <i class="ion-ios-arrow-left"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/">خانه</a></li>
-                                <li><a href="element.html">عناصر طراحی</a></li>
-                                <li class="dropdown magz-dropdown">
-                                    <a href="#">صفحات دسترسی کاربر <i class="fa fa-angle-left"></i></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="login.html">صفحه ورود</a></li>
-                                        <li><a href="register.html">صفحه ثبت نام</a></li>
-                                        <li><a href="forgot.html">صفحه فراموشی رمز عبور</a></li>
-                                        <li><a href="reset.html">صفحه تغییر رمز عبور</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="category.html">صفحه دسته بندی</a></li>
-                                <li><a href="single-post.html">صفحه خبر</a></li>
-                                <li><a href="search.html">صفحه جستجو</a></li>
-                                <li><a href="contact.html">صفحه تماس با ما</a></li>
-                                <li><a href="about.html">صفحه درباره ما</a></li>
-                                <li class="dropdown magz-dropdown">
-                                    <a href="#">خطا ها <i class="fa fa-angle-left"></i></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="403.html">خطای ۴۰۳</a></li>
-                                        <li><a href="404.html">خطای ۴۰۴</a></li>
-                                        <li><a href="500.html">خطای ۵۰۰</a></li>
-                                        <li><a href="503.html">خطای ۵۰۳</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                    @await Component.InvokeAsync("CategoryMenu")
+                        @await Component.InvokeAsync("MegaMono")
 
-                    <li class="dropdown magz-dropdown magz-dropdown-megamenu">
-                            <a href="#">
-                                مگامنو <i class="ion-ios-arrow-left"></i>
-                                <div class="badge">ویژه</div>
-                            </a>
-                            <div class="dropdown-menu megamenu">
-                                <div class="megamenu-inner">
-                                    <div class="row">
-                                        <div class="col-lg-3">
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <h2 class="megamenu-title">ویژه</h2>
-                                                </div>
-                                            </div>
-                                            <ul class="vertical-menu">
-                                                <li>
-                                                    <a href="#">
-                                                        <i class="ion-ios-circle-outline"></i> مگامنو یک ویژگی
-                                                        جدید است
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <i class="ion-ios-circle-outline"></i> این یک مثال
-                                                        است
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <i class="ion-ios-circle-outline"></i> برای ساخت زیر
-                                                        منوها
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <i class="ion-ios-circle-outline"></i> شما می توانید
-                                                        آیتم اضافه کنید
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><i class="ion-ios-circle-outline"></i> آیتم های شما</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-9">
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <h2 class="megamenu-title">پست های جدید</h2>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <article class="article col-lg-4 mini">
-                                                    <div class="inner">
-                                                        <figure>
-                                                            <a href="single-post.html">
-                                                                <img src="/WebSiteTemplate/images/news/img10.jpg" alt="Sample Article">
-                                                            </a>
-                                                        </figure>
-                                                        <div class="padding">
-                                                            <div class="detail">
-                                                                <div class="time">۲۷ اسفند ۱۳۹۸</div>
-                                                                <div class="category">
-                                                                    <a href="category.html">ورزشی</a>
-                                                                </div>
-                                                            </div>
-                                                            <h2>
-                                                                <a href="single-post.html">
-                                                                    لورم ایپسوم متن ساختگی با
-                                                                    تولید
-                                                                    سادگی نامفهوم
-                                                                </a>
-                                                            </h2>
-                                                        </div>
-                                                    </div>
-                                                </article>
-                                                <article class="article col-lg-4 mini">
-                                                    <div class="inner">
-                                                        <figure>
-                                                            <a href="single-post.html">
-                                                                <img src="/WebSiteTemplate/images/news/img11.jpg" alt="Sample Article">
-                                                            </a>
-                                                        </figure>
-                                                        <div class="padding">
-                                                            <div class="detail">
-                                                                <div class="time">۱۲ فروردین ۱۳۹۸</div>
-                                                                <div class="category">
-                                                                    <a href="category.html">سلامت</a>
-                                                                </div>
-                                                            </div>
-                                                            <h2>
-                                                                <a href="single-post.html">
-                                                                    لورم ایپسوم متن ساختگی با
-                                                                    تولید
-                                                                    سادگی نامفهوم
-                                                                </a>
-                                                            </h2>
-                                                        </div>
-                                                    </div>
-                                                </article>
-                                                <article class="article col-lg-4 mini">
-                                                    <div class="inner">
-                                                        <figure>
-                                                            <a href="single-post.html">
-                                                                <img src="/WebSiteTemplate/images/news/img14.jpg" alt="Sample Article">
-                                                            </a>
-                                                        </figure>
-                                                        <div class="padding">
-                                                            <div class="detail">
-                                                                <div class="time">۱۷ فروردین ۱۳۹۸</div>
-                                                                <div class="category">
-                                                                    <a href="category.html">گردشگری</a>
-                                                                </div>
-                                                            </div>
-                                                            <h2>
-                                                                <a href="single-post.html">
-                                                                    لورم ایپسوم متن ساختگی با
-                                                                    تولید
-                                                                    سادگی نامفهوم
-                                                                </a>
-                                                            </h2>
-                                                        </div>
-                                                    </div>
-                                                </article>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="dropdown magz-dropdown magz-dropdown-megamenu">
-                            <a href="#">
-                                ستون بندی <i class="ion-ios-arrow-left"></i>
-                            </a>
-                            <div class="dropdown-menu megamenu">
-                                <div class="megamenu-inner">
-                                    <div class="row">
-                                        <div class="col-lg-3">
-                                            <h2 class="megamenu-title">ستون ۱</h2>
-                                            <ul class="vertical-menu">
-                                                <li><a href="#">مثال ۱</a></li>
-                                                <li><a href="#">مثال ۲</a></li>
-                                                <li><a href="#">مثال ۳</a></li>
-                                                <li><a href="#">مثال ۴</a></li>
-                                                <li><a href="#">مثال ۵</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <h2 class="megamenu-title">ستون ۲</h2>
-                                            <ul class="vertical-menu">
-                                                <li><a href="#">مثال ۶</a></li>
-                                                <li><a href="#">مثال ۷</a></li>
-                                                <li><a href="#">مثال ۸</a></li>
-                                                <li><a href="#">مثال ۹</a></li>
-                                                <li><a href="#">مثال ۱۰</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <h2 class="megamenu-title">ستون ۳</h2>
-                                            <ul class="vertical-menu">
-                                                <li><a href="#">مثال ۱۱</a></li>
-                                                <li><a href="#">مثال ۱۲</a></li>
-                                                <li><a href="#">مثال ۱۳</a></li>
-                                                <li><a href="#">مثال ۱۴</a></li>
-                                                <li><a href="#">مثال ۱۵</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <h2 class="megamenu-title">ستون ۴</h2>
-                                            <ul class="vertical-menu">
-                                                <li><a href="#">مثال ۱۶</a></li>
-                                                <li><a href="#">مثال ۱۷</a></li>
-                                                <li><a href="#">مثال ۱۸</a></li>
-                                                <li><a href="#">مثال ۱۹</a></li>
-                                                <li><a href="#">مثال ۲۰</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+                        @await Component.InvokeAsync("CategoryMenu")
 
                         @if (User.IsInRole("Admin"))
                         {
-            <li class="dropdown magz-dropdown">
-                <a href="#">
-                    مدیریت سایت <i class="ion-ios-arrow-left"></i>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a href="/Admin/Pages/Index"><i class="icon fa fa-newspaper-o"></i>مدیریت خبرها</a></li>
-                    <li><a href="/Admin/PageGroups/Index"><i class="icon fa fa-archive"></i>مدیریت گروه ها</a></li>
-                    <li><a asp-controller="ManageUser" asp-action="Index"><i class="icon fa fa-users"></i>مدیریت کاربران</a></li>
-                    <li><a asp-controller="ManageRole" asp-action="Index"><i class="icon fa fa-universal-access"></i> مدیریت نقش ها</a></li>
-                    <li><a href="#"><i class="icon fa fa-comments"></i>نظرات</a></li>
-                    <li class="divider"></li>
-                </ul>
-            </li>}
+                            <li class="dropdown magz-dropdown">
+                                <a href="#">
+                                    مدیریت سایت <i class="ion-ios-arrow-left"></i>
+                                </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/Admin/Pages/Index"><i class="icon fa fa-newspaper-o"></i>مدیریت خبرها</a></li>
+                                <li><a href="/Admin/PageGroups/Index"><i class="icon fa fa-archive"></i>مدیریت گروه ها</a></li>
+                                <li><a asp-controller="ManageUser" asp-action="Index"><i class="icon fa fa-users"></i>مدیریت کاربران</a></li>
+                                <li><a asp-controller="ManageRole" asp-action="Index"><i class="icon fa fa-universal-access"></i> مدیریت نقش ها</a></li>
+                                <li class="divider"></li>
+                            </ul>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
@@ -373,7 +161,7 @@
                         <h1 class="block-title">درباره ما</h1>
                         <div class="block-body">
                             <figure class="foot-logo">
-                                <img src="/WebSiteTemplate/images/logo.png" class="img-responsive" alt="Logo">
+                                <h1 style="font-family: Arial; color: white">ArioCMS</h1>
                             </figure>
                             <p class="brand-description">
                                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم ...
@@ -391,22 +179,6 @@
                         </h1>
                         <div class="block-body">
                             @await Component.InvokeAsync("TopTagsFooter")
-                        </div>
-                    </div>
-                    <div class="line"></div>
-                    <div class="block">
-                        <h1 class="block-title">خبرنامه</h1>
-                        <div class="block-body">
-                            <p>برای دریافت آخرین اخبار ایمیل خود را وارد کنید</p>
-                            <form class="newsletter">
-                                <div class="input-group">
-                                    <div class="input-group-addon">
-                                        <i class="ion-ios-email-outline"></i>
-                                    </div>
-                                    <input type="email" class="form-control email" placeholder="ایمیل شما">
-                                </div>
-                                <button class="btn btn-primary btn-block white">ثبت ایمیل</button>
-                            </form>
                         </div>
                     </div>
                 </div>
@@ -507,7 +279,6 @@
                         <div class="block-body no-margin">
                             <ul class="footer-nav-horizontal">
                                 <li><a href="/">خانه</a></li>
-                                <li><a href="contact.html">تماس با ما</a></li>
                                 <li><a href="/home/aboutus">در باره ما</a></li>
                             </ul>
                         </div>
@@ -517,7 +288,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="copyright">
-                        COPYRIGHT &copy; MAGZ 2020. تمام حقوق محفوظ است.
+                        COPYRIGHT &copy; Ario 2021. تمام حقوق محفوظ است.
                     </div>
                 </div>
             </div>

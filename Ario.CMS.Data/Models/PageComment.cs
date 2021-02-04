@@ -14,10 +14,6 @@ namespace Ario.CMS.Data.Models
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         public int PageID { get; set; }
 
-        [Display(Name = "نام خبر")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        public string PageTitle { get; set; }
-
         [Display(Name = "نام و نام خانوادگی")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [MaxLength(150)]

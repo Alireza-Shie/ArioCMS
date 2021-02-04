@@ -19,17 +19,17 @@
                 <article class="article">
                     <div class="inner">
                         <figure>
-                            <a href="single-post.html">
+                            <a href="/News/@item.PageID/@item.PageTitle">
                                 <img src="/PageImages/@item.ImageName" alt="Sample Article">
                             </a>
                         </figure>
                         <div class="padding">
                             <div class="detail">
                                 <div class="time">@item.CreateDate.ToShamsi()</div>
-                                <div class="category"><a href="category.html">@item.Visit بازدید</a></div>
+                                <div class="category"><a href="/News/@item.PageID/@item.PageTitle">@item.Visit بازدید</a></div>
                             </div>
-                            <h2><a href="single-post.html">@item.PageTitle</a></h2>
-                            <p>@item.ShortDescription</p>
+                            <h2><a href="/News/@item.PageID/@item.PageTitle">@item.PageTitle</a></h2>
+                            <p>@item.ShortDescription.Trim().Replace("،", " ").Substring(0, 55) ... </p>
                         </div>
                     </div>
                 </article>

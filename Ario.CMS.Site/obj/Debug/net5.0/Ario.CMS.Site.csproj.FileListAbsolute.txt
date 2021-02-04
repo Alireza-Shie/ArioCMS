@@ -49,7 +49,6 @@ E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Ar
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Ario.CMS.Site.RazorCoreGenerate.cache
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
-E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
@@ -198,11 +197,9 @@ E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Ra
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\ManageRole\AddRole.cshtml.g.cs
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\ManageRole\EditRole.cshtml.g.cs
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\ManageRole\Index.cshtml.g.cs
-E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\_DefaultLayout.cshtml.g.cs
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\Components\MostNews\Default.cshtml.g.cs
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\Components\Slider\Default.cshtml.g.cs
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\Components\CategoryMenu\Default.cshtml.g.cs
-E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\Components\LatestComment\Default.cshtml.g.cs
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\Components\LatestPage\Default.cshtml.g.cs
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\News\Archive.cshtml.g.cs
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\_SiteLayout.cshtml.g.cs
@@ -219,3 +216,5 @@ E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Ra
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\Components\TopTagsHeader\Default.cshtml.g.cs
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\Components\TopTagsSlider\Default.cshtml.g.cs
 E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Home\AboutUS.cshtml.g.cs
+E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\Components\ShowComments\Default.cshtml.g.cs
+E:\Developer Projects\Web ASP Project\Ario.CMS\Ario.CMS.Site\obj\Debug\net5.0\Razor\Views\Shared\Components\MegaMono\Default.cshtml.g.cs

@@ -53,139 +53,39 @@
                             <ul class="tags">
                                 @foreach (var item in Model.Tags.Split(','))
                                 {
-                                    <li><a href="#">@item</a></li>
+                                    <li><a href="/search/search?q=@item">@item</a></li>
                                 }
                             </ul>
                         </div>
                         <div class="col d-inline-block">
-                            
+
                         </div>
                     </footer>
                 </article>
+                <br />
 
-                <div class="comments my-5" id="Comments">
-                    <h2 class="title">نظرات <a href="#AddComment">یک دیدگاه جدید ارسال کنید.</a></h2>
-                    <div class="comment-list">
-                        <div class="item">
-                            <div class="user">
-                                <figure>
-                                    <img src="/WebSiteTemplate/images/img01.jpg">
-                                </figure>
-                                <div class="details">
-                                    <h5 class="name">لورم ایپسوم</h5>
-                                    <div class="time">24 ساعت قبل</div>
-                                    <div class="description">
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با
-                                        تولید سادگی نامفهوم
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم <a href="#">لورم</a> لورم
-                                        ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با
-                                        تولید سادگی نامفهوم
-                                    </div>
-                                    <footer>
-                                         
-                                    </footer>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="user">
-                                <figure>
-                                    <img src="/WebSiteTemplate/images/img01.jpg">
-                                </figure>
-                                <div class="details">
-                                    <h5 class="name">لورم ایپسوم</h5>
-                                    <div class="time">12 ساعت قبل</div>
-                                    <div class="description">
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با
-                                        تولید سادگی نامفهوم
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم <a href="#">لورم</a> لورم
-                                        ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با
-                                        تولید سادگی نامفهوم
-                                    </div>
-                                    <footer>
-                                         
-                                    </footer>
-                                </div>
-                            </div>
-                            <div class="reply-list">
-                                <div class="item">
-                                    <div class="user">
-                                        <figure>
-                                            <img src="/WebSiteTemplate/images/img01.jpg">
-                                        </figure>
-                                        <div class="details">
-                                            <h5 class="name">لورم ایپسوم</h5>
-                                            <div class="time">18 ساعت قبل</div>
-                                            <div class="description">
-                                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن
-                                                ساختگی با تولید سادگی نامفهوم
-                                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن
-                                                ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید
-                                                سادگی نامفهوم
-                                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن
-                                                ساختگی با تولید سادگی نامفهوم
-                                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن
-                                                ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید
-                                                سادگی نامفهوم
-                                            </div>
-                                            <footer>
-                                                 
-                                            </footer>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="user">
-                                <figure>
-                                    <img src="/WebSiteTemplate/images/img01.jpg">
-                                </figure>
-                                <div class="details">
-                                    <h5 class="name">لورم ایپسوم</h5>
-                                    <div class="time">23 ساعت قبل</div>
-                                    <div class="description">
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با
-                                        تولید سادگی نامفهوم
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم <a href="#">لورم</a> لورم
-                                        ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با
-                                        تولید سادگی نامفهوم
-                                    </div>
-                                    <footer>
-                                         
-                                    </footer>
-                                </div>
-                            </div>
-                        </div>
+                @await Component.InvokeAsync("ShowComments", new { pageId = Model.PageID })
+                
+                <form class="row" id="AddComment" asp-controller="News" asp-action="AddComment" asp-route-pageId="@Model.PageID">
+                    <div class="col-md-12">
+                        <h3 class="title">ارسال دیدگاه جدید</h3>
                     </div>
-                    <form class="row" id="AddComment">
-                        <div class="col-md-12">
-                            <h3 class="title">ارسال دیدگاه جدید</h3>
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="name">نام <span class="required"></span></label>
-                            <input type="text" id="name" name="" class="form-control">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="email">ایمیل <span class="required"></span></label>
-                            <input type="email" id="email" name="" class="form-control">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="website">وب سایت</label>
-                            <input type="url" id="website" name="" class="form-control">
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label for="message">دیدگاه <span class="required"></span></label>
-                            <textarea class="form-control" name="message" placeholder="دیگاه خود را بنویسید ..."></textarea>
-                        </div>
-                        <div class="form-group col-md-12">
-                            <button class="btn btn-primary float-right">ارسال دیدگاه</button>
-                        </div>
-                    </form>
-                </div>
+                    <div class="form-group col-md-4">
+                        <label for="name">نام <span class="required"></span></label>
+                        <input type="text" id="name" name="Name" class="form-control">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="email">ایمیل <span class="required"></span></label>
+                        <input type="email" id="email" name="Email" class="form-control">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="message">دیدگاه <span class="required"></span></label>
+                        <textarea class="form-control" name="CommentText" placeholder="دیگاه خود را بنویسید ..."></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <button class="btn btn-primary float-right">ارسال دیدگاه</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

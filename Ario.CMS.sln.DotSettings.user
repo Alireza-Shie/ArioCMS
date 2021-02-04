@@ -3,6 +3,7 @@
   &lt;Assembly Path="C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.1\Microsoft.AspNetCore.Mvc.Abstractions.dll" /&gt;&#xD;
   &lt;Assembly Path="C:\Program Files\dotnet\packs\Microsoft.AspNetCore.App.Ref\5.0.0\ref\net5.0\Microsoft.AspNetCore.Mvc.ViewFeatures.dll" /&gt;&#xD;
   &lt;Assembly Path="C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.1\Microsoft.AspNetCore.Mvc.ViewFeatures.dll" /&gt;&#xD;
+  &lt;Assembly Path="C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.1\Microsoft.AspNetCore.Mvc.Razor.dll" /&gt;&#xD;
 &lt;/AssemblyExplorer&gt;</s:String>
 	
 	

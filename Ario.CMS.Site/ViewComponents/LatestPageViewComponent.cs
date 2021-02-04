@@ -13,7 +13,7 @@ namespace Ario.CMS.Site.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            return View(db.Page.GetPageByCreateDate());
+            return View("Default", db.Page.GetPageByCreateDate());
         }
     }
 }

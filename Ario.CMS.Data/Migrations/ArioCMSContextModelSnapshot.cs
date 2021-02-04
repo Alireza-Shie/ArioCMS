@@ -95,10 +95,6 @@ namespace Ario.CMS.Data.Migrations
                     b.Property<int>("PageID")
                         .HasColumnType("int");
 
-                    b.Property<string>("PageTitle")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("CommentID");
 
                     b.HasIndex("PageID");

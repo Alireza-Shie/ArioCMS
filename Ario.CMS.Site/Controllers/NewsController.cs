@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Ario.CMS.Data.Context.UnitOfWork;
+using Ario.CMS.Data.Models;
 
 namespace Ario.CMS.Site.Controllers
 {
@@ -22,7 +23,8 @@ namespace Ario.CMS.Site.Controllers
         public IActionResult ShowPage(int id, string title)
         {
             var page = db.Page.GetPageByID(id);
-            ViewBag.groupName = db.PageGroup.GetGroupNameByID(db.Page.GetGroupIdByPageId(id)); 
+            ViewBag.groupName = db.PageGroup.GetGroupNameByID(db.Page.GetGroupIdByPageId(id));
+
             if (page == null)
             {
                 return NotFound();
@@ -46,6 +48,21 @@ namespace Ario.CMS.Site.Controllers
             }
 
             return View(result);
+        }
+
+        public IActionResult AddComment(int pageId, string name, string email, string commentText)
+        {
+            var page = db.Page.GetPageByID(pageId);
+            PageComment comment = new PageComment()
+            {
+                CommentText = commentText,
+                DateTime = DateTime.Now,
+                Email = email,
+                Name = name,
+                PageID = pageId
+            };
+            db.PageComment.InsertComment(comment);
+            return RedirectToAction(nameof(ShowPage), new { id = page.PageID, title = page.PageTitle});
         }
     }
 }
